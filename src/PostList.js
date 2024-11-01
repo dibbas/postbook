@@ -17,7 +17,7 @@ function PostList() {
       { id: 2, title: 'Заголовок 2', text: 'Текст поста 2' },
       { id: 3, title: 'Заголовок 3', text: 'Текст поста 3' },
       { id: 4, title: 'Заголовок 4', text: 'Текст поста 4' },
-      { id: 5, title: 'Заголовок 5', text: 'Текст поста 5' },
+      { id: 5, title: 'Заголовок 5', text: 'https://t.me/mig41/37741' },
     ];
 
     setPosts(testPosts);
