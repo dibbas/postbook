@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+
+function isLink(text) {
+  // Простая проверка на наличие протокола в начале строки
+  return text.startsWith('http://') || text.startsWith('https://');
+}
 
 function PostList() {
   const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
+    // useEffect(() => {
   //   axios.get('http://127.0.0.1:5000/api/v1/posts')
   //     .then(response => setPosts(response.data))
   //     .catch(error => console.error('Ошибка при получении постов:', error));
@@ -27,8 +31,8 @@ function PostList() {
     <ul>
       {posts.map(post => (
         <li key={post.id}>
-          <h2>{post.text}</h2>
-          <p>{post.text}</p>
+          <h2>{isLink(post.text) ? <a href={post.text} target="_blank" rel="noopener noreferrer">{post.text}</a> : post.text}</h2>
+          <p>{isLink(post.text) ? <a href={post.text} target="_blank" rel="noopener noreferrer">{post.text}</a> : post.text}</p>
         </li>
       ))}
     </ul>
